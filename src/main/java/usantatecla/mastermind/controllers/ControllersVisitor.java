@@ -1,10 +1,10 @@
 package usantatecla.mastermind.controllers;
 
 public interface ControllersVisitor {
-	
+
 	void visit(StartController startController);
-	
-	void visit(ProposalController proposalController);
-	
+
+	void visit(PlayController playController);
+
 	void visit(ResumeController continueController);
 }

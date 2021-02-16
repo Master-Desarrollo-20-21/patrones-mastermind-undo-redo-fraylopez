@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.JLabel;
 
-import usantatecla.mastermind.controllers.ProposalController;
+import usantatecla.mastermind.controllers.PlayController;
 import usantatecla.mastermind.types.Color;
 import usantatecla.mastermind.views.ColorView;
 
@@ -13,13 +13,13 @@ import usantatecla.mastermind.views.ColorView;
 class ProposedCombinationView extends JLabel {
 
 	public static final int ERROR_CODE = -1;
-	
-	private ProposalController proposalController;
 
-	ProposedCombinationView(ProposalController proposalController) {
-		this.proposalController = proposalController;
+	private PlayController controller;
+
+	ProposedCombinationView(PlayController controller) {
+		this.controller = controller;
 		String initials = "";
-		for (Color color : this.proposalController.getColors(this.proposalController.getAttempts()-1)) {
+		for (Color color : this.controller.getColors(this.controller.getAttempts() - 1)) {
 			initials += new ColorView(color).getInitial();
 		}
 		this.setText(initials);
@@ -30,7 +30,7 @@ class ProposedCombinationView extends JLabel {
 
 	List<Color> read(String characters) {
 		List<Color> colors = new ArrayList<Color>();
-		for (int i=0; i<characters.length(); i++) {
+		for (int i = 0; i < characters.length(); i++) {
 			colors.add(ColorView.getInstance(characters.charAt(i)));
 		}
 		return colors;
