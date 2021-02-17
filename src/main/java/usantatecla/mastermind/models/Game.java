@@ -64,10 +64,13 @@ public class Game {
 	}
 
 	public GameMemento createMemento() {
-		return new GameMemento();
+		return new GameMemento(this.proposedCombinations);
 	}
 
 	public void set(GameMemento gameMemento) {
+		this.proposedCombinations = gameMemento.getProposedCombinations();
+		this.attempts = gameMemento.getAttemps();
+		this.results = gameMemento.getResults(this.secretCombination);
 	}
 
 }
