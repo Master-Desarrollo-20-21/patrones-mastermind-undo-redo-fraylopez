@@ -23,7 +23,7 @@ public class PlayController extends Controller implements AcceptorController {
     this.undoController.undo();
   }
 
-  public boolean undoable() {
+  public boolean isUndoable() {
     return this.undoController.isUndoable();
   }
 
@@ -31,7 +31,7 @@ public class PlayController extends Controller implements AcceptorController {
     this.redoController.redo();
   }
 
-  public boolean redoable() {
+  public boolean isRedoable() {
     return this.redoController.isRedoable();
   }
 
